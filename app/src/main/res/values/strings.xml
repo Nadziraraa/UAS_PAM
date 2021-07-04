@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">BelanjaanKu</string>
+    <string name="Lihat_Data">Lihat Data</string>
+    <string name="Edit_Data">Edit Data</string>
+    <string name="Nama_Item">Nama Item</string>
+    <string name="DetailBarang">Detail LIst Barang</string>
+    <string name="Nama">Nama Barang</string>
+    <string name="Jumlah">Jumlah Barang</string>
+    <string name="Harga">Harga</string>
+</resources>
