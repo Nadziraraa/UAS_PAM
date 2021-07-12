@@ -14,6 +14,7 @@ import com.example.belanjaanku.Database.DBController;
 
 import java.util.HashMap;
 
+//Class BarangActivity yang merupakan turunan dari Class AppCompatActivity dan
 public class BarangActivity extends AppCompatActivity {
     private EditText edtnmbar, edtjumlahbrg, edtharga, edtuangbyr;
     private Button btnsimpan;
@@ -26,7 +27,6 @@ public class BarangActivity extends AppCompatActivity {
     private TextView txttotalbelanja;
 
     DBController controller = new DBController(this);
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,9 +49,8 @@ public class BarangActivity extends AppCompatActivity {
         txttotalbelanja = (TextView) findViewById(R.id.totalbelanja);
 
 
+        //membuat action pada button simpan
         btnsimpan.setOnClickListener(new View.OnClickListener() {
-            
-
             @Override
             public void onClick(View view) {
                 String namabarang = edtnmbar.getText().toString().trim();
@@ -59,6 +58,7 @@ public class BarangActivity extends AppCompatActivity {
                 String harga = edtharga.getText().toString().trim();
                 String uangbayar = edtuangbyr.getText().toString().trim();
 
+                //membuat perhitungan pada total jumlah barang yg akan dibeli
                 double jb = Double.parseDouble(jumlahbeli);
                 double h = Double.parseDouble(harga);
                 double ub = Double.parseDouble(uangbayar);
@@ -82,6 +82,7 @@ public class BarangActivity extends AppCompatActivity {
             }
         });
 
+        //MEMBERIKAN ACTION PADA TOMBOL EDIT DATA
         btneditdata.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -95,6 +96,8 @@ public class BarangActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Data sudah diedit", Toast.LENGTH_LONG).show();
             }
         });
+
+        //Memberikan action pada tombol keluar yang nantinya akan masuk ke halaman activitymain
         btnkeluar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

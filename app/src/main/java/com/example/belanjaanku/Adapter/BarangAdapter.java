@@ -22,12 +22,14 @@ import com.example.belanjaanku.R;
 
 import java.util.ArrayList;
 
+//class BarangAdapter yang merupakan tururnan ddari RecycylerView dari layout activity_barang
 public class BarangAdapter extends RecyclerView.Adapter<BarangAdapter.BarangViewHolder> {
     private ArrayList<Barang> listData;
     private Context C;
 
     public BarangAdapter(ArrayList<Barang> listData) {
         this.listData = listData;}
+
 
     @Override
     public BarangViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -60,9 +62,11 @@ public class BarangAdapter extends RecyclerView.Adapter<BarangAdapter.BarangView
         });
     }
 
+
     private void showpopupmenu(View view, String nm, String jml, String hrg, int position) {
         PopupMenu popup = new PopupMenu(view.getContext().getApplicationContext(), view);
         MenuInflater inflater = popup.getMenuInflater();
+
         //inflate menu items to popup menu
         inflater.inflate(R.menu.popup_menu, popup.getMenu());
 
@@ -81,6 +85,7 @@ public class BarangAdapter extends RecyclerView.Adapter<BarangAdapter.BarangView
                     view.getContext().startActivity(intent);
 
                 } else if (itemId == R.id.mnedit) {
+
                     // tampilkan menu edit
                     Intent intent = new Intent(view.getContext(), EditDataActivity.class);
                     intent.putExtra("nama", nm);
@@ -96,6 +101,7 @@ public class BarangAdapter extends RecyclerView.Adapter<BarangAdapter.BarangView
         popup.show();
     }
 
+    //membuaut method untuk mengambil harga yang sudah terjumlah ketika user memasuki jumlah dan harga
     @Override
     public int getItemCount() {
         return (listData != null)?listData.size() : 0;
