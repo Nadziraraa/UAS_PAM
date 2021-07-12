@@ -16,6 +16,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+//Class MainActivity yang merupakan turunan dari Class AppCompatActivity dan
+// mengimplementasikan Interface View.OnClickListener untuk meng-handle event onClick().
 public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private BarangAdapter adapter;
@@ -24,12 +26,14 @@ public class MainActivity extends AppCompatActivity {
     String nm, harga, jml;
     private FloatingActionButton fab;
 
+    //meng-inisialisasikan pada method onCreate(). Method ini akan dieksekusi setiap Activity dicitpakan.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
 
+        //membuat objek dari komponen yang ada di activity_main.xml ke java dengan bantuan fungsi findViewById().
         recyclerView = findViewById(R.id.recyclerView);
         fab = findViewById(R.id.floatingBtn);
         BacaData();
@@ -38,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
 
+        //mententukan Class yang akan meng-handle komponen tersebut apabila diklik dengan method setOnClickListener().
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -47,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    //membaca data barang kemudian menambahkan data item ke array
     public void BacaData() {
         ArrayList<HashMap<String, String>> daftarBarang = controller.getAllBarang();
         barangArrayList = new ArrayList<>();

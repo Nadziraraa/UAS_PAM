@@ -8,15 +8,17 @@ import android.os.Handler;
 
 public class SplashScreen extends AppCompatActivity {
 
+    //membuat splashscreen untuk tampilan awal ketika aplikasi dibuka
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
+        //menentukan waktu berapa lama splashscreen dibuka dan halaman apa yang akan ditampilkan setelah splashscreen selesai
         Thread thread = new Thread(){
             public void run(){
                 try {
-                    sleep(1000);
+                    sleep(2000);
                 }catch (InterruptedException e){
                     e.printStackTrace();
                 }finally {

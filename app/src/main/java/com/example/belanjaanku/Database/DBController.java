@@ -26,6 +26,9 @@ public class DBController extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+    //ketika user memasukkan data maka database akan mengelolanya menggunakan hashmap yang mengorganisasikan
+    //data - datanya menggunakan key value, dan data yang dimasukkan adalah sebagai berikut, nama barang, jumlah barang,
+    //dan harga barang
     public void insertData(HashMap<String,String> queryValues) {
         SQLiteDatabase dbasisdata = this.getWritableDatabase();
         ContentValues nilai = new ContentValues();
@@ -36,6 +39,7 @@ public class DBController extends SQLiteOpenHelper {
         dbasisdata.close();
     }
 
+    //database akan mengelola data yang diedit menggunakan hashmap juga
     public void editData(HashMap<String, String> queryValues, String  position) {
         SQLiteDatabase dbasisdata = this.getWritableDatabase();
         ContentValues kontak = new ContentValues();
@@ -46,6 +50,7 @@ public class DBController extends SQLiteOpenHelper {
         dbasisdata.close();
     }
 
+    //mengorganisasikan variabel menggunakan arraylist
     public ArrayList<HashMap<String, String>> getAllBarang(){
         ArrayList<HashMap<String,String>> daftarBarang;
         daftarBarang = new ArrayList<HashMap<String, String>>();

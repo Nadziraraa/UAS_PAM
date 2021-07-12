@@ -12,7 +12,7 @@ import com.example.belanjaanku.Database.DBController;
 import java.util.HashMap;
 
 public class EditDataActivity extends AppCompatActivity {
-
+    //membuat beberapa variabel terlebih dahulu
     EditText edNama, edJumlah;
     Button btnSimpan;
 
@@ -34,6 +34,8 @@ public class EditDataActivity extends AppCompatActivity {
         edNama.setText(nama);
         edJumlah.setText(jumlah);
 
+        //memberikan aksi untuk button simpan
+        //mententukan Class yang akan meng-handle komponen tersebut apabila diklik dengan method setOnClickListener().
         btnSimpan.setOnClickListener(v -> {
             setContentView(R.layout.activity_main);
 
@@ -43,6 +45,7 @@ public class EditDataActivity extends AppCompatActivity {
                 String nm = edNama.getText().toString();
                 String jml = edJumlah.getText().toString();
 
+                //menampilkan data, hashmap menggunakan key value untuk mengorganisasikan datanya
                 HashMap<String,String> qvalues = new HashMap<>();
                 qvalues.put("nama",nm);
                 qvalues.put("jumlah",jml);
@@ -52,8 +55,6 @@ public class EditDataActivity extends AppCompatActivity {
 
                 finish();
             }
-
-
         });
     }
 
